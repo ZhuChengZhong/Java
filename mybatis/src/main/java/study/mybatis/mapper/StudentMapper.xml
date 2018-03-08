@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="study.mybatis.mapper.StudentMapper">
+ 	
+ 	<resultMap type="Student" id="studentMap">
+ 		<id column="id"  property="id"/>
+ 		<result column="age" property="age"/>
+ 		<result column="name" property="name"/>
+ 		<result column="number" property="number"  typeHandler="study.mybatis.typehandler.StringToIntTypeHandler"/>
+ 	</resultMap>
+ 	
+	<select id="getStudentById" parameterType="Integer" resultMap="studentMap" >
+		select id,age,name,number from student where id=#{id};
+	</select>
+	
+	<insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id" >
+		insert into student values(NULL,#{age},#{name},#{number});
+	</insert>
+	
+</mapper> 
