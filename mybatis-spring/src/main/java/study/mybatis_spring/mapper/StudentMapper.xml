@@ -3,7 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
- <mapper namespace="study.mybatis.mapper.StudentMapper">
+ <mapper namespace="study.mybatis_spring.mapper.StudentMapper">
  
  <!-- 配置二级缓存 -->
  	<cache></cache>
@@ -11,7 +11,7 @@
  		<id column="id"  property="id"/>
  		<result column="age" property="age"/>
  		<result column="name" property="name"/>
- 		<result column="number" property="number"  typeHandler="study.mybatis.typehandler.StringToIntTypeHandler"/>
+ 		<result column="number" property="number"  typeHandler="study.mybatis_spring.typehandler.StringToIntTypeHandler"/>
  	</resultMap>
  	
 	<select id="getStudentById" parameterType="Integer" resultMap="studentMap" useCache="true" > <!-- useCache="false" flushCache="true" 每次查询清除缓存 -->

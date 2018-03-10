@@ -1,4 +1,4 @@
-package study.mybatis.typehandler;
+package study.mybatis_spring.typehandler;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

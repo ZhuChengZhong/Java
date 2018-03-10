@@ -1,4 +1,4 @@
-package study.mybatis.entity;
+package study.mybatis_spring.entity;
 
 import java.io.Serializable;
 
