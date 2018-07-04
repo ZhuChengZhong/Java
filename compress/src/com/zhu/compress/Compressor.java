@@ -1,6 +1,17 @@
 package com.zhu.compress;
 
 public interface Compressor {
-	public String compress(String s);
-	public String decompress(String s);
+	/**
+	 * 压缩
+	 * @param sources
+	 * @return
+	 */
+	public byte[] compress(byte[] sources);
+	
+	/**
+	 * 解压缩
+	 * @param sources
+	 * @return
+	 */
+	public byte[] decompress(byte[] sources);
 }
