@@ -125,30 +125,11 @@ public class BitList {
 	public int size() {
 		return size;
 	}
-	
-	public static void main(String[] args) {
-		/*byte[]bs= {127,85};
-		BitList list=new BitList(bs);
-		System.out.println(list.size());
-		for(int i=0;i<list.size();i++) {
-			System.out.println(list.get(i));
-		}*/
-		/*BitList list=new BitList(100);
-		System.out.println(list.capcity);
-		for(int i=0;i<11;i++) {
-			list.add(i%2==0?true:false);
-		}
-		System.out.println(list.size());
-		for(int i=0;i<list.size();i++) {
-			System.out.println(list.get(i));
-		}*/
-		BitList list=new BitList(100);
-		list.addByte((byte)85);
-		list.add(false);
-		list.add(true);
-		for(int i=0;i<list.size();i++) {
-			System.out.println(list.get(i));
-		}
-		System.out.println(Arrays.toString(list.toBytes()));
+
+	@Override
+	public String toString() {
+		return "BitList [capcity=" + capcity + ", size=" + size + ", bitkeep=" + Arrays.toString(bitkeep) + "]";
 	}
+	
+	
 }

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import com.zhu.compress.hfm.HFMCompressor;
+import com.zhu.compress.lz77.LZ77Compressor;
 import com.zhu.compress.lzw.LZWCompressor;
 
 public class Test {
@@ -14,12 +15,6 @@ public class Test {
 		byte[]bs=new byte[(int) file.length()];
 		int lenA=bs.length;
 		in.read(bs);
-		for(int i=0;i<bs.length;i++) {
-			if(bs[i]<0) {
-				System.out.println(bs[i]);
-			}
-		}
-		
 		byte[]b=compressor.compress(bs);
 		int lenB=b.length;
 		byte[]sources=compressor.decompress(b);
@@ -32,8 +27,9 @@ public class Test {
 		System.out.println(rate*1.0/100);
 	}
 	public static void main(String[] args) throws Exception {
-		Compressor cp=new HFMCompressor();
+		//Compressor cp=new HFMCompressor();
 		//Compressor cp=new LZWCompressor();
+		Compressor cp=new LZ77Compressor();
 		String sourceFile="/home/zhu/Desktop/test.java";
 		String target="/home/zhu/Desktop/test-copy.java";
 		test(sourceFile, target, cp);
