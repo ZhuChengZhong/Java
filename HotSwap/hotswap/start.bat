@@ -1,0 +1,1 @@
+java -javaagent:hotpatch.jar -cp test.jar com.zhu.test.MainTest

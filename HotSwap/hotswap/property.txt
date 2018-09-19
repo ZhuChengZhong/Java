@@ -1,0 +1,3 @@
+Can-Retransform-Classes: true
+Can-Redefine-Classes: true
+Premain-Class: com.zhu.hotswap.agent.HotPatch
